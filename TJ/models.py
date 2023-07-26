@@ -15,13 +15,13 @@ class Entry(models.Model):
     name = models.CharField(max_length=100)
     writeup = models.TextField()
     photo_album = models.ImageField()
-    journal = models.ForeignKey('Journal', on_delete=models.CASCADE, related_name='entries')
+    journal = models.ForeignKey('Journal', on_delete=models.CASCADE, related_name='entries', default=None)
 
     def __str__(self):
         return self.name
     
 class Journal(models.Model):
     title = models.CharField(max_length=255)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='journals')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='journals', default=None)
     def __str__(self):
         return self.title
