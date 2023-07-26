@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'TJ_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tj',
-        'USER': 'tjuser',
-        'PASSWORD': 'tj',
-        'HOST': 'localhost',
+        'NAME': 'yootkaqj',
+        'USER': 'yootkaqj',
+        'PASSWORD': 'k-HDt_Vm3hbwW-VCPYmBf7QsU3VH84Rz',
+        'HOST': '	hansken.db.elephantsql.com',
     }
 }
 
