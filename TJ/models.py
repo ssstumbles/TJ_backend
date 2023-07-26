@@ -6,7 +6,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
-    img_url = models.TextField(null=True)
+    profile_photo = models.ImageField(null=True)
 
     def __str__(self):
         return self.username
@@ -15,6 +15,7 @@ class Entry(models.Model):
     name = models.CharField(max_length=100)
     writeup = models.TextField()
     photo_album = models.ImageField()
+    journal = models.ForeignKey('Journal', on_delete=models.CASCADE, related_name='entries')
 
     def __str__(self):
         return self.name
@@ -22,7 +23,5 @@ class Entry(models.Model):
 class Journal(models.Model):
     title = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='journals')
-    entries = models.ManyToManyField(Entry)
-
     def __str__(self):
         return self.title
