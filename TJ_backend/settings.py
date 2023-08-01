@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-x0j3bmhmb^ff9tpnisgo1&o7v(*a!=$5r09v)8elmdp-_x6388
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,11 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'TJ',
     'rest_framework',
-    'rest_framework.authtoken',
+    # 'rest_framework.authtoken',
     'corsheaders',
 ]
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -55,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'TJ_backend.urls'
 
@@ -80,13 +79,23 @@ WSGI_APPLICATION = 'TJ_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'yootkaqj',
+#         'USER': 'yootkaqj',
+#         'PASSWORD': 'k-HDt_Vm3hbwW-VCPYmBf7QsU3VH84Rz',
+#         'HOST': 'hansken.db.elephantsql.com',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'yootkaqj',
-        'USER': 'yootkaqj',
-        'PASSWORD': 'k-HDt_Vm3hbwW-VCPYmBf7QsU3VH84Rz',
-        'HOST': 'hansken.db.elephantsql.com',
+        'NAME': 'tj',
+        'USER': 'tjuser',
+        'PASSWORD': 'tj',
+        'HOST': 'localhost',
     }
 }
 
@@ -115,10 +124,10 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny'
     ],
-        'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-}
+#         'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+ }
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
