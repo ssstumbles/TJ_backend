@@ -21,7 +21,10 @@ class Entry(models.Model):
         return self.name
     
 class Journal(models.Model):
-    title = models.CharField(max_length=255)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='journals', default=None)
+    journal_name = models.CharField(max_length=255)
+    journal_date_end = models.DateField()
+    journal_date_start = models.DateField()
+    journal_ongoing = models.BooleanField(default=False)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='journals', default=None)
     def __str__(self):
-        return self.title
+        return self.journal_name

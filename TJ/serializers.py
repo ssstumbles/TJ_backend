@@ -2,15 +2,15 @@ from rest_framework import serializers
 from .models import User, Journal, Entry
 
 class JournalSerializer(serializers.HyperlinkedModelSerializer):
-    entries = serializers.HyperlinkedRelatedField(
-        view_name = 'entry_detail',
-        many = True,
-        read_only = True
+    # entries = serializers.HyperlinkedRelatedField(
+    #     view_name = 'entry_detail',
+    #     many = True,
+    #     read_only = True
         # is thi just for JSON format?
-    )
+    #)
     class Meta:
         model = Journal
-        fields = ('title', 'user')
+        fields = ('journal_name', 'journal_date_start', 'journal_date_end', 'journal_ongoing')
 
 class EntrySerializer(serializers.HyperlinkedModelSerializer):
     journal = serializers.HyperlinkedRelatedField(
