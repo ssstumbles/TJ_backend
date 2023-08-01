@@ -54,6 +54,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
 
 ROOT_URLCONF = 'TJ_backend.urls'
 
@@ -92,10 +96,10 @@ WSGI_APPLICATION = 'TJ_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tj',
-        'USER': 'tjuser',
-        'PASSWORD': 'tj',
-        'HOST': 'localhost',
+        'NAME': 'yootkaqj',
+        'USER': 'yootkaqj',
+        'PASSWORD': 'k-HDt_Vm3hbwW-VCPYmBf7QsU3VH84Rz',
+        'HOST': 'hansken.db.elephantsql.com',
     }
 }
 
@@ -123,7 +127,7 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny'
-    ],
+    ]
 #         'DEFAULT_AUTHENTICATION_CLASSES': [
 #         'rest_framework.authentication.TokenAuthentication',
 #     ],
