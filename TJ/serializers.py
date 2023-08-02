@@ -10,7 +10,7 @@ class JournalSerializer(serializers.HyperlinkedModelSerializer):
     #)
     class Meta:
         model = Journal
-        fields = ('journal_name', 'journal_date_start', 'journal_date_end', 'journal_ongoing')
+        fields = ('id', 'journal_name', 'journal_date_start', 'journal_date_end', 'journal_ongoing')
 
 class EntrySerializer(serializers.HyperlinkedModelSerializer):
     journal = serializers.HyperlinkedRelatedField(
@@ -19,7 +19,7 @@ class EntrySerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Entry
-        fields = ('name', 'writeup', 'photo_album', 'journal')
+        fields = ('id', 'name', 'writeup', 'photo_album', 'journal')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     journal = serializers.HyperlinkedRelatedField(
@@ -28,4 +28,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Journal
-        fiels = ('*')
+        fiels = ('__all__')
