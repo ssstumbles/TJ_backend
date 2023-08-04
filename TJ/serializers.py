@@ -26,5 +26,5 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         read_only = True
     )
     class Meta:
-        model = Journal
+        model = User
         fields = ('__all__')
