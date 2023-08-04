@@ -14,6 +14,13 @@ class EntryList(generics.ListCreateAPIView):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        journal_id = self.request.query_params.get('journal', None)
+        if journal_id:
+            queryset = queryset.filter(journal_id=journal_id)
+        return queryset
+
 class EntryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
