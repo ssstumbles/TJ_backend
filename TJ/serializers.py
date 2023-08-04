@@ -18,7 +18,7 @@ class EntrySerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Entry
-        fields = ('id', 'name', 'writeup', 'photo_album', 'journal')
+        fields = ('id', 'name', 'writeup', 'journal')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     journal = serializers.HyperlinkedRelatedField(

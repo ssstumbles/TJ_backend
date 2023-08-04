@@ -14,7 +14,7 @@ class User(models.Model):
 class Entry(models.Model):
     name = models.CharField(max_length=100)
     writeup = models.TextField()
-    photo_album = models.ImageField()
+    # photo_album = models.ImageField()
     journal = models.ForeignKey('Journal', on_delete=models.CASCADE, related_name='entries', default=None)
 
     def __str__(self):
